@@ -3,7 +3,84 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Celo Bank</title>
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="./assets/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="./assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="./assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="./assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="./assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="./assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="./assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="./assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="./assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="./assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
         <!-- Reset CSS -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <!-- Embed Fonts -->
@@ -21,14 +98,33 @@
         <link rel="stylesheet" href="./assets/css/grid.css" />
         <!-- Styles CSS -->
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <!-- Responsive -->
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
-        <!-- Header -->
+        <!-- PC Header -->
         <header class="header">
-            <div class="container">
+            <div class="container header__inner">
                 <div class="row">
+                    <!-- Tablet / mobile menu -->
+                    <label
+                        for="header__mobile-checkbox"
+                        class="header__toggle-menu"
+                    >
+                        <svg
+                            class="icon-menu"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
                     <!-- Logo -->
-                    <a href="#!">
+                    <a href="#">
                         <img
                             src="./assets/icons/logo.svg"
                             alt="Logo"
@@ -37,19 +133,54 @@
                     </a>
                     <!-- Navigation -->
                     <nav class="navbar">
-                        <ul class="navbar__list">
+                        <ul id="navbar-pc" class="navbar__list">
                             <li class="navbar__items">
-                                <a href="#!" class="navbar__link">Home</a>
+                                <a
+                                    href="#home"
+                                    class="navbar__link navbar__mobile-link"
+                                    nav-link="Home"
+                                    >Home
+                                </a>
                             </li>
                             <li class="navbar__items">
-                                <a href="#!" class="navbar__link">Products</a>
+                                <a
+                                    href="#product"
+                                    class="navbar__link navbar__mobile-link"
+                                    nav-link="Products"
+                                    >Products
+                                </a>
                             </li>
                             <li class="navbar__items">
-                                <a href="#!" class="navbar__link">Features</a>
+                                <a
+                                    href="#features"
+                                    class="navbar__link navbar__mobile-link"
+                                    nav-link="Features"
+                                    >Features
+                                </a>
                             </li>
                             <li class="navbar__items">
-                                <a href="#!" class="navbar__link">Blog</a>
+                                <a
+                                    href="#blog"
+                                    class="navbar__link navbar__mobile-link"
+                                    nav-link="Blog"
+                                    >Blog
+                                </a>
                             </li>
+                            <li class="navbar__items">
+                                <a
+                                    href="#!"
+                                    class="btn btn-outline-primary btn-xs show-on-tablet mt-16 w-100"
+                                    >Log in</a
+                                >
+                            </li>
+                            <li class="navbar__items">
+                                <a
+                                    href="#!"
+                                    class="btn btn-xs btn-primary show-on-tablet mt-16 w-100"
+                                    >Sign up
+                                </a>
+                            </li>
+                            <span class="navbar__line"></span>
                         </ul>
                     </nav>
 
@@ -61,9 +192,57 @@
                 </div>
             </div>
         </header>
+        <!-- Tablet / mobile Header -->
+        <header class="header__mobile">
+            <!-- Checkbox -->
+            <input
+                type="checkbox"
+                name=""
+                id="header__mobile-checkbox"
+                class="header__mobile-checkbox"
+                hidden
+            />
+            <!-- Overlay -->
+            <label for="header__mobile-checkbox" class="header__mobile-overlay">
+            </label>
+            <!-- Menu drawer -->
+            <div class="header__mobile-drawer">
+                <div class="header__mobile-inner">
+                    <!-- Logo -->
+                    <a href="#">
+                        <img
+                            src="./assets/icons/logo.svg"
+                            alt="Logo"
+                            class="header__logo"
+                        />
+                    </a>
+                    <!-- close -->
+                    <label for="header__mobile-checkbox">
+                        <svg
+                            class="icon-close"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 384 512"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                            />
+                        </svg>
+                    </label>
+                </div>
+                <!-- Navigation -->
+                <nav class="navbar navbar__mobile">
+                    <ul
+                        id="navbar-mobile"
+                        class="navbar__list navbar__mobile-list"
+                    ></ul>
+                </nav>
+            </div>
+        </header>
 
         <!-- Hero -->
-        <section class="hero">
+        <section id="home" class="hero">
             <div class="container">
                 <div class="row flex-center">
                     <div class="col-lg-6 col-md-6 col-12">
@@ -74,7 +253,7 @@
                                 <strong class="hero__strong">Payment </strong
                                 >For Everyone.
                             </h1>
-                            <p class="section-desc">
+                            <p class="section-desc line-clamp">
                                 We bring together eveything that’s required to
                                 build websites and apps that accept payments and
                                 send payouts globally. We are the best platform.
@@ -253,10 +432,10 @@
         <!-- Main -->
         <main>
             <!-- Work -->
-            <section class="work">
+            <section id="product" class="work">
                 <div class="container">
                     <div class="row flex-center flex-reverse">
-                        <div class="col-lg-5 offset-lg-2 col-md-6 col-12">
+                        <div class="col-lg-5 offset-lg-2 col-md-12 col-12">
                             <section class="section-info">
                                 <p class="section-about">
                                     Digital Smart Wallet
@@ -269,7 +448,7 @@
                                             Open a High Interest Checking
                                             account
                                         </h3>
-                                        <p class="work__desc">
+                                        <p class="work__desc line-clamp">
                                             Fund your bank account with a
                                             minimum balance of $100. Enroll in 3
                                             minutes or less!
@@ -281,7 +460,7 @@
                                             10 point-of-sale transactions each
                                             Month that are at least $10 each.
                                         </h3>
-                                        <p class="work__desc">
+                                        <p class="work__desc line-clamp">
                                             Be sure to use your rewards checking
                                             account as often as possible in
                                             order to accue APYI
@@ -292,7 +471,7 @@
                                         <h3 class="work__title">
                                             Receive up to 5.50% APY
                                         </h3>
-                                        <p class="work__desc">
+                                        <p class="work__desc line-clamp">
                                             The APY you earn will be based on
                                             your account balance and satisfying
                                             the transaction requirement.!
@@ -301,9 +480,10 @@
                                 </div>
                             </section>
                         </div>
-                        <div class="col-lg-5 col-md-6 col-12">
+                        <div class="col-lg-5 col-md-12 col-12">
                             <figure class="media-wrapper">
                                 <img
+                                    class="work__decor-img"
                                     src="./assets/img/work-decor.png"
                                     alt="Digital Payment For Everyone."
                                 />
@@ -333,10 +513,10 @@
                 </div>
             </section>
             <!-- Feature -->
-            <section class="feature">
+            <section id="features" class="feature">
                 <div class="container">
                     <div class="row flex-center">
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 col-md-12 col-12">
                             <section class="section-info">
                                 <p class="section-about">
                                     Digital Smart Wallet
@@ -364,8 +544,8 @@
                                 </a>
                             </section>
                         </div>
-                        <div class="col-lg-6 offset-lg-1">
-                            <figure class="media-wrapper">
+                        <div class="col-lg-6 offset-lg-1 col-md-12 col-12">
+                            <figure class="media-wrapper media-wrapper-tablet">
                                 <!-- Payment -->
                                 <div class="card-payment feature__payment">
                                     <div class="card-type">
@@ -442,7 +622,7 @@
             <section class="feature">
                 <div class="container">
                     <div class="row flex-end flex-reverse">
-                        <div class="col-lg-5 offset-lg-1">
+                        <div class="col-lg-5 offset-lg-1 col-md-12 col-12">
                             <section class="section-info">
                                 <p class="section-about">
                                     Digital Smart Wallet
@@ -470,7 +650,7 @@
                                 </a>
                             </section>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-md-12 col-12">
                             <figure class="media-wrapper feature__media">
                                 <img
                                     class="feature__img-man"
@@ -542,8 +722,8 @@
             <section class="testimonial">
                 <div class="container">
                     <!-- Info -->
-                    <div class="row">
-                        <div class="col-lg-5 offset-lg-4">
+                    <div class="row flex-d-center-row">
+                        <div class="col-lg-5 col-12">
                             <section class="section-info testimonial__info">
                                 <p class="section-about">Our Testimonial</p>
                                 <h2 class="section-heading">
@@ -558,10 +738,12 @@
                         </div>
                     </div>
                     <!--Comment -->
-                    <div class="row row-cols-md-2 row-cols-1 mt-7">
+                    <div
+                        class="row row-cols-md-2 row-cols-1 mt-7 testimonial__list-comment"
+                    >
                         <div class="col flex-d-center">
                             <div class="testimonial__comment">
-                                <p class="testimonial__text">
+                                <p class="testimonial__text line-clamp">
                                     Fantastic platform for online banking. The
                                     best online banking platform I have used.
                                     Payments, loans, and money transfers have
@@ -580,7 +762,7 @@
                         </div>
                         <div class="col flex-d-center">
                             <div class="testimonial__comment">
-                                <p class="testimonial__text">
+                                <p class="testimonial__text line-clamp">
                                     Fantastic platform for online banking. The
                                     best online banking platform I have used.
                                     Payments, loans, and money transfers have
@@ -609,20 +791,20 @@
                 </div>
             </section>
             <!-- Blog -->
-            <section class="blog">
+            <section id="blog" class="blog">
                 <div class="container">
                     <!-- Top -->
                     <div class="row flex-center">
-                        <div class="col-lg-5 col-12">
+                        <div class="col-lg-5 col-md-12 col-12">
                             <p class="section-about">Our Blog</p>
                             <h2 class="section-heading">Get The Updates</h2>
-                            <p class="section-desc">
+                            <p class="section-desc line-clamp">
                                 Read our blog for the regular updates about us
                                 and about our online banking services that may
                                 inspire you
                             </p>
                         </div>
-                        <div class="col-lg-2 offset-lg-5 col-2 offset-10">
+                        <div class="col-lg-2 offset-lg-5 col-md-12 col-12">
                             <a href="#" class="btn btn-md btn-black"
                                 >Read All
                             </a>
@@ -630,19 +812,22 @@
                     </div>
                     <!-- Bottom -->
                     <div class="blog__list">
-                        <div class="row row-cols-lg-2 row-cols-1">
+                        <div
+                            class="row row-cols-lg-2 row-cols-1 r-g-30 blog__list-mobile"
+                        >
                             <div class="col">
                                 <article class="blog__item">
                                     <figure class="blog__img">
-                                        <img
-                                            src="./assets/img/blog-01.jpg"
-                                            alt="Online bank is the best and secure
-                                        way to save in the future"
-                                        />
+                                        <a href="#!">
+                                            <img
+                                                src="./assets/img/blog-01.jpg"
+                                                alt="Online bank is the best and secure way to save in the future"
+                                            />
+                                        </a>
                                     </figure>
                                     <div class="blog__info">
                                         <p class="blog__date">July 03, 2022</p>
-                                        <h4 class="blog__title">
+                                        <h4 class="blog__title line-clamp">
                                             Online bank is the best and secure
                                             way to save in the future
                                         </h4>
@@ -655,14 +840,16 @@
                             <div class="col">
                                 <article class="blog__item">
                                     <figure class="blog__img">
-                                        <img
-                                            src="./assets/img/blog-02.jpg"
-                                            alt="Why do you need to open a bank account in online"
-                                        />
+                                        <a href="#!">
+                                            <img
+                                                src="./assets/img/blog-02.jpg"
+                                                alt="Why do you need to open a bank account in online"
+                                            />
+                                        </a>
                                     </figure>
                                     <div class="blog__info">
                                         <p class="blog__date">July 03, 2022</p>
-                                        <h4 class="blog__title">
+                                        <h4 class="blog__title line-clamp">
                                             Why do you need to open a bank
                                             account in online
                                         </h4>
@@ -675,14 +862,16 @@
                             <div class="col">
                                 <article class="blog__item">
                                     <figure class="blog__img">
-                                        <img
-                                            src="./assets/img/blog-03.jpg"
-                                            alt="The benefits that we get from credit card at anytime"
-                                        />
+                                        <a href="#!">
+                                            <img
+                                                src="./assets/img/blog-03.jpg"
+                                                alt="The benefits that we get from credit card at anytime"
+                                            />
+                                        </a>
                                     </figure>
                                     <div class="blog__info">
                                         <p class="blog__date">July 03, 2022</p>
-                                        <h4 class="blog__title">
+                                        <h4 class="blog__title line-clamp">
                                             The benefits that we get from credit
                                             card at anytime
                                         </h4>
@@ -695,16 +884,18 @@
                             <div class="col">
                                 <article class="blog__item">
                                     <figure class="blog__img">
-                                        <img
-                                            src="./assets/img/blog-04.jpg"
-                                            alt="How to manage your money in online in this busy days"
-                                        />
+                                        <a href="#!">
+                                            <img
+                                                src="./assets/img/blog-04.jpg"
+                                                alt="How to manage your money in online in this busy days"
+                                            />
+                                        </a>
                                     </figure>
                                     <div class="blog__info">
                                         <p class="blog__date">July 03, 2022</p>
-                                        <h4 class="blog__title">
+                                        <h4 class="blog__title line-clamp">
                                             How to manage your money in online
-                                            in this busy days...
+                                            in this busy days
                                         </h4>
                                         <a href="#!" class="blog__link"
                                             >Read Blog
@@ -716,7 +907,7 @@
                     </div>
                 </div>
             </section>
-            <!-- Down -->
+            <!-- Download -->
             <section class="download">
                 <div class="container">
                     <div class="download__inner">
@@ -738,7 +929,7 @@
                             </div>
                         </div>
                         <div class="row flex-d-center-row mt-38 c-gap-16">
-                            <div class="col-lg-2 p-0">
+                            <div class="col-lg-2 col-md-3 col-5 p-0">
                                 <a href="#!" class="download__app">
                                     <img
                                         src="./assets/icons/ggplay.svg"
@@ -746,7 +937,7 @@
                                     />
                                 </a>
                             </div>
-                            <div class="col-lg-2 p-0">
+                            <div class="col-lg-2 col-md-3 col-5 p-0">
                                 <a href="#!" class="download__app">
                                     <img
                                         src="./assets/icons/appstore.svg"
@@ -770,12 +961,12 @@
                     <!-- Footer top -->
                     <div class="footer__top">
                         <div class="row">
-                            <div class="col-lg-3">
+                            <div class="col-lg-3 col-md-4 col-12">
                                 <!-- Logo -->
                                 <img src="./assets/icons/logo.svg" alt="Logo" />
                                 <a href="#!"> </a>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-4 col-12">
                                 <section class="footer__column">
                                     <h4 class="footer__heading">Sitemap</h4>
                                     <ul class="footer__list">
@@ -807,7 +998,7 @@
                                     </ul>
                                 </section>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-4 col-12">
                                 <section class="footer__column">
                                     <h4 class="footer__heading">Socials</h4>
                                     <ul class="footer__list">
@@ -834,7 +1025,7 @@
                                     </ul>
                                 </section>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-5 col-md-12 col-12">
                                 <section class="footer__column">
                                     <h4 class="footer__heading">Head Office</h4>
                                     <p class="footer__link">
@@ -863,7 +1054,7 @@
                     <!-- Footer bottom -->
                     <div class="footer__bottom">
                         <div class="row">
-                            <div class="col-lg-3">
+                            <div class="col-lg-3 col-12">
                                 <section class="footer__column">
                                     <a
                                         class="footer__link"
@@ -872,7 +1063,7 @@
                                     >
                                 </section>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-2 col-12">
                                 <section class="footer__column">
                                     <a
                                         class="footer__link"
@@ -891,5 +1082,8 @@
                 </div>
             </div>
         </footer>
+        <!-- Other -->
+        <a href="#!" class="back-to-top"></a>
+        <script src="./assets/js/handle.js"></script>
     </body>
 </html>

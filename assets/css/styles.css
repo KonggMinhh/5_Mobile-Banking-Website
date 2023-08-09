@@ -92,11 +92,31 @@ button {
     font-size: inherit;
     font-family: inherit;
 }
-
+html,
+body {
+    scroll-padding: 80px;
+}
 html {
     font-size: 62.5%;
 }
+::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
 
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.2);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+::selection {
+    background: var(--primary-purple);
+    color: var(--white);
+}
 body {
     font-family: "Open Sans", sans-serif;
 }
@@ -114,14 +134,15 @@ body {
     height: var(--height);
 
     color: var(--white);
-
     font-size: 1.6rem;
     font-weight: 600;
+    text-align: center;
 
     background-color: var(--bgc);
     border-radius: var(--border-radius);
     border: currentColor;
 
+    transition: background-color 0.2s ease-in;
     cursor: pointer;
 }
 /* Size btn */
@@ -144,10 +165,23 @@ body {
 .btn-black {
     --bgc: var(--dark-blue);
 }
+.btn-black:hover {
+    --bgc: var(--primary-purple);
+}
 .btn-primary {
     --bgc: var(--primary-purple);
 }
-
+.btn-primary:hover {
+    --bgc: var(--primary-bg);
+}
+.btn-outline-primary {
+    --bgc: transparent;
+    border: 1px solid var(--primary-purple);
+    color: var(--primary-purple);
+}
+.btn-outline-primary:hover {
+    --bgc: rgb(114, 100, 214, 0.14);
+}
 .container {
     padding: 0;
 }
@@ -197,6 +231,7 @@ body {
     margin-top: 12px;
 }
 .section-desc {
+    --line-clamp: 3;
     margin-top: 20px;
     color: var(--light-gray-2);
     font-size: 1.8rem;
@@ -211,7 +246,7 @@ body {
     --fz-thur: 1rem;
     --fz-time: 1.2rem;
     --bgi: url(../icons/decor-atm.svg);
-    width: var(--width);
+    width: min(var(--width), 100%);
     height: var(--height);
     background-image: var(--bgi);
     background-image: var(--linear-gradient);
@@ -245,9 +280,13 @@ body {
     font-weight: 600;
 }
 
-/* ===== margin =======  */
+/* ===== Margin & Padding =======  */
 .mt-7 {
     margin-top: 70px;
+}
+
+.mt-16 {
+    margin-top: 16px;
 }
 .mt-38 {
     margin-top: 38px;
@@ -258,12 +297,35 @@ body {
 .c-gap-16 {
     column-gap: 16px;
 }
+.r-g-30 {
+    row-gap: 30px;
+}
 .color-white {
     color: var(--white);
 }
+.w-100 {
+    width: 100%;
+}
+/* Line clamping */
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 2);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 /* ============ Header ============================== */
-.header {
+.header__inner {
     padding-top: 42px;
+    padding-bottom: 8px;
+}
+.header.fixed {
+    position: sticky;
+    top: -28px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: var(--white);
+    box-shadow: 0 4px 8px rgba(84, 104, 120, 0.1);
 }
 .header .row {
     margin: 0;
@@ -273,16 +335,42 @@ body {
     margin-left: 46px;
 }
 .navbar__list {
+    position: relative;
     display: flex;
     align-items: center;
 }
 
 .navbar__link,
 .header__login {
+    display: inline-block;
     padding: 12px 24px;
     color: var(--light-gray-2);
     font-size: 1.6rem;
     line-height: 1.75;
+}
+.navbar__link--active,
+.navbar__link:hover {
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+.navbar__link::before {
+    content: attr(nav-link);
+    display: block;
+    font-weight: 600;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.navbar__line {
+    position: absolute;
+    bottom: 7px;
+    left: 0px;
+    display: inline-block;
+    width: 0;
+    height: 2px;
+    border-radius: 5px;
+    background: #7264d6;
 }
 .header__actions {
     display: flex;
@@ -298,7 +386,7 @@ body {
 
 /* ========= Hero ===========  */
 .hero {
-    margin-top: 76px;
+    margin-top: 68px;
     padding-bottom: 80px;
 }
 /* * * Hero Content * * */
@@ -317,7 +405,7 @@ body {
     align-items: center;
     margin-top: 40px;
     padding-right: 8px;
-    min-width: 540px;
+    min-width: min(540px, 100%);
     height: 74px;
     border-radius: 8px;
     background: var(--white);
@@ -510,6 +598,9 @@ body {
     font-size: 1.6rem;
     line-height: 1.75;
     color: var(--light-gray-2);
+}
+.work__decor-img {
+    width: min(100%);
 }
 .work__img {
     width: min(100%);
@@ -707,9 +798,12 @@ body {
 
 .feature__media::before {
     position: absolute;
+    content: "";
     left: 0;
     bottom: 0;
-    content: url(../img/feature-decor.png);
+    width: min(470px, 100%);
+    height: min(432px, 100%);
+    background: url(../img/feature-decor.png) center / cover no-repeat;
     display: inline-block;
     z-index: -1;
 }
@@ -813,6 +907,7 @@ body {
     border: 1.5px solid transparent;
 }
 .testimonial__text {
+    --line-clamp: 5;
     color: var(--light-gray-2);
     font-size: 2.2rem;
     text-align: center;
@@ -873,7 +968,7 @@ body {
 }
 /* ========== Blog ================= */
 .blog {
-    padding: 80px;
+    padding: 80px 0;
 }
 .blog__list {
     margin-top: 70px;
@@ -881,7 +976,6 @@ body {
 .blog__item {
     display: flex;
     align-items: center;
-    flex: 1;
     column-gap: 22px;
     padding: 28px;
     border-radius: 12px;
@@ -905,6 +999,7 @@ body {
     line-height: 1.7;
 }
 .blog__title {
+    --line-clamp: 2;
     margin-top: 10px;
 }
 .blog__link {
@@ -913,6 +1008,9 @@ body {
     color: var(--light-gray-2);
     font-size: 1.6rem;
     line-height: 1.6;
+}
+.blog__link:hover {
+    color: var(--primary-purple);
 }
 /* ======= Download =========  */
 .download {
@@ -1009,7 +1107,7 @@ body {
 }
 .footer__input {
     padding: 12px;
-    min-width: 270px;
+    width: 270px;
     height: 52px;
     color: var(--light-gray-5);
     font-size: 1.6rem;
@@ -1038,4 +1136,26 @@ body {
     color: var(--white);
     font-size: 1.6rem;
     line-height: 1.75;
+}
+/* =========== Back to top ==================  */
+.back-to-top {
+    position: fixed;
+    right: 40px;
+    bottom: 84px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 1s ease-in-out;
+    z-index: 99;
+}
+.back-to-top::before {
+    position: absolute;
+    display: inline-block;
+    inset: 0;
+    margin: auto;
+    content: url(../icons/back-to-top.svg);
+    background: var(--white);
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
+    border-radius: inherit;
 }
