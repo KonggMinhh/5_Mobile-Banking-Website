@@ -10,6 +10,9 @@
     .show-on-tablet {
         display: none;
     }
+    .blog__dots{
+        display: none;
+    }
 }
 /* * * * * Table & Mobile * * * * * */
 @media screen and (max-width: 991px) {
@@ -95,6 +98,9 @@
     /* ====== BLOG ======= */
     .blog .btn {
         margin-top: 16px;
+    }
+    .blog__dots {
+        display: none;
     }
     /* ====== DOWNLOAD ===== */
     .download__star--1 {
@@ -182,6 +188,7 @@
     .blog .blog__item {
         flex-direction: column;
         row-gap: 16px;
+        transition: transform 1s;
     }
     .blog__img img {
         width: 100%;
@@ -199,15 +206,19 @@
         margin-top: 30px;
     }
     .blog__dot {
-        width: 10px;
-        height: 10px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        background-color: #eee;
+        background-color: #08041533;
         cursor: pointer;
         border: none;
         outline: none;
     }
     .blog__dot--active {
+        width: 12px;
+        height: 12px;
+        outline: 1px solid var(--primary-purple);
+        outline-offset: 4px;
         background-color: var(--primary-purple);
         cursor: default;
     }

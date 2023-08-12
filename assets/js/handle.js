@@ -11,6 +11,8 @@ const lineActive = $(".navbar__link.navbar__link--active");
 const backToTopBtn = $(".back-to-top");
 const navbarPc = $("#navbar-pc");
 const navbarMobile = $("#navbar-mobile");
+const dotContainer = $(".blog__dots");
+const blogItems = $$(".blog__item");
 
 // ============ Start Copy Navigation from PC -> Mobile ===========
 navbarMobile.innerHTML = navbarPc.innerHTML;
@@ -74,7 +76,7 @@ function updateLinePosition(nav) {
     const style = window.getComputedStyle(nav);
     const paddingLeft = parseFloat(style.paddingLeft);
     const paddingRight = parseFloat(style.paddingRight);
-    
+
     lineEl.style.left = nav.offsetLeft + offsetAdjustment + "px";
     lineEl.style.width = nav.offsetWidth - (paddingLeft + paddingRight) + "px";
 }
@@ -93,5 +95,28 @@ navLink.forEach((t) => {
 // ============== Start Slider Comment ===============
 // ============== End Slider Comment =================
 
-// ============== Start Slider BLog ===============
+// ============== Start Slider BLog ( No Finish) ===============
+function goToSlide(slide) {
+    blogItems.forEach((item, i) => {
+        item.style.transform = `translateX(${100 * i}%)`;
+    });
+}
+function createDots() {
+    blogItems.forEach((_, i) => {
+        dotContainer.insertAdjacentHTML(
+            "beforeend",
+            `
+            <button class="blog__dot" data-slide="${i}"></button>
+            `
+        );
+    });
+}
+createDots();
+
+dotContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("blog__dot")) {
+        const { slide } = e.target.dataset;
+        // goToSlide(slide);
+    }
+});
 // ============== End Slider Blog =================
