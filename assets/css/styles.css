@@ -161,6 +161,11 @@ body {
     --height: 58px;
     --border-radius: 8px;
 }
+.btn-circle {
+    --width: 58px;
+    --height: 58px;
+    --border-radius: 50%;
+}
 /* Btn background */
 .btn-black {
     --bgc: var(--dark-blue);
@@ -364,13 +369,14 @@ body {
 
 .navbar__line {
     position: absolute;
+    display: inline-block;
     bottom: 7px;
     left: 0px;
-    display: inline-block;
-    width: 0;
+    width: 0px;
     height: 2px;
     border-radius: 5px;
     background: #7264d6;
+    transition: all 0.2s ease;
 }
 .header__actions {
     display: flex;
@@ -865,6 +871,10 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+.testimonial__list-comment {
+    overflow: hidden;
+    flex-wrap: nowrap;
 }
 .testimonial__comment {
     position: relative;

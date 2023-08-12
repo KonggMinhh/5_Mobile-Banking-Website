@@ -10,7 +10,6 @@ const lineEl = $(".navbar__line");
 const lineActive = $(".navbar__link.navbar__link--active");
 const backToTopBtn = $(".back-to-top");
 const navbarPc = $("#navbar-pc");
-console.log(navbarPc);
 const navbarMobile = $("#navbar-mobile");
 
 // ============ Start Copy Navigation from PC -> Mobile ===========
@@ -70,15 +69,29 @@ window.onscroll = calcBackToTop;
 window.onload = calcBackToTop;
 // ============ End Back to top ===========
 // ============ Start Change Line Nav link ===========
-// lineEl.style.left = lineActive.offsetLeft + "24px";
-// lineEl.style.width = lineActive.offsetWidth + "px";
+function updateLinePosition(nav) {
+    const offsetAdjustment = 24;
+    const style = window.getComputedStyle(nav);
+    const paddingLeft = parseFloat(style.paddingLeft);
+    const paddingRight = parseFloat(style.paddingRight);
+    
+    lineEl.style.left = nav.offsetLeft + offsetAdjustment + "px";
+    lineEl.style.width = nav.offsetWidth - (paddingLeft + paddingRight) + "px";
+}
 
-navEl.addEventListener("click", function (e) {
-    const clicked = e.target.closest(".navbar__link");
-    if (!clicked) return;
-    navLink.forEach((t) => {
-        t.classList.remove("navbar__link--active");
-    });
-    clicked.classList.add("navbar__link--active");
+navLink.forEach((t) => {
+    t.onclick = () => {
+        navLink.forEach((link) => {
+            link.classList.remove("navbar__link--active");
+        });
+        t.classList.add("navbar__link--active");
+        updateLinePosition(t);
+    };
 });
 // ============ End Change Line Nav link =============
+
+// ============== Start Slider Comment ===============
+// ============== End Slider Comment =================
+
+// ============== Start Slider BLog ===============
+// ============== End Slider Blog =================

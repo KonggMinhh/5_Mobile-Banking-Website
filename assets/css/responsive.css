@@ -169,16 +169,12 @@
     .feature__dola {
         display: none;
     }
-   
+
     .work .media-wrapper,
     .feature .media-wrapper {
         margin-top: 130px;
     }
-    /* ====== TESTIMONIAL ======= */
-    .testimonial__list-comment {
-        overflow: hidden;
-        flex-wrap: nowrap;
-    }
+
     /* ====== BLOG ====== */
     .blog .btn {
         margin-top: 16px;
@@ -194,6 +190,26 @@
     .blog__list-mobile {
         overflow: hidden;
         flex-wrap: nowrap;
+    }
+    .blog__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+        margin-top: 30px;
+    }
+    .blog__dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #eee;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    .blog__dot--active {
+        background-color: var(--primary-purple);
+        cursor: default;
     }
     /* ======= DOWNLOAD =======  */
     .download__inner {
@@ -220,6 +236,6 @@
         margin-top: 24px;
     }
     .footer__input {
-        width: 186px;
+        width: min(186px, 100%);
     }
 }
